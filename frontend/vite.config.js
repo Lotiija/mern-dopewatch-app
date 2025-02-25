@@ -7,6 +7,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'http://localhost:5000', // Your backend API server URL
+        // target: process.env.VITE_API_URL,
         changeOrigin: true,              // Ensures the host header is properly modified
         secure: false,                   // Set to false if you're working with HTTP and not HTTPS
         // rewrite: (path) => path.replace(/^\/api/, ''), // Optional: rewrite path (e.g., /api/products -> /products)
