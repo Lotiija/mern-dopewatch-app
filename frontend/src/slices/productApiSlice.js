@@ -5,7 +5,7 @@ export const productSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getProducts: builder.query({
       query: ({ keyword, pageNumber }) => ({
-        url: PRODUCTS_URL,
+        url: `${https://mern-dopewatch-app.onrender.com}`,
         params: { keyword, pageNumber },
       }),
       keepUnusedDataFor: 5,
