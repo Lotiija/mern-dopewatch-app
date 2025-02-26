@@ -1,4 +1,4 @@
-import { PRODUCTS_URL } from '../constants';
+// import { PRODUCTS_URL } from '../constants';
 import { apiSlice } from './apiSlice';
 
 export const productSlice = apiSlice.injectEndpoints({
@@ -12,20 +12,20 @@ export const productSlice = apiSlice.injectEndpoints({
     }),
     getProductDetails: builder.query({
       query: (productId) => ({
-        url: `${PRODUCTS_URL}/${productId}`,
+        url: `${https://mern-dopewatch-app.onrender.com}/${productId}`,
       }),
       keepUnusedDataFor: 5,
     }),
     createProduct: builder.mutation({
       query: () => ({
-        url: `${PRODUCTS_URL}`,
+        url: `${https://mern-dopewatch-app.onrender.com}`,
         method: 'POST',
       }),
       invalidatesTags: ['Product'],
     }),
     updateProduct: builder.mutation({
       query: (data) => ({
-        url: `${PRODUCTS_URL}/${data.productId}`,
+        url: `${https://mern-dopewatch-app.onrender.com}/${data.productId}`,
         method: 'PUT',
         body: data,
       }),
@@ -40,21 +40,21 @@ export const productSlice = apiSlice.injectEndpoints({
     }),
     deleteProduct: builder.mutation({
       query: (productId) => ({
-        url: `${PRODUCTS_URL}/${productId}`,
+        url: `${https://mern-dopewatch-app.onrender.com}/${productId}`,
         method: 'DELETE',
       }),
       providesTags: ['Product'],
     }),
     createReview: builder.mutation({
       query: (data) => ({
-        url: `${PRODUCTS_URL}/${data.productId}/reviews`,
+        url: `${https://mern-dopewatch-app.onrender.com}/${data.productId}/reviews`,
         method: 'POST',
         body: data,
       }),
       invalidatesTags: ['Product'],
     }),
     getTopProducts: builder.query({
-      query: () => `${PRODUCTS_URL}/top`,
+      query: () => `${https://mern-dopewatch-app.onrender.com}/top`,
       keepUnusedDataFor: 5,
     }),
   }),
