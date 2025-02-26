@@ -5,27 +5,27 @@ export const productSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getProducts: builder.query({
       query: ({ keyword, pageNumber }) => ({
-        url: `${https://mern-dopewatch-app.onrender.com}`,
+        url: `${https://mern-dopewatch-app.onrender.com/api/products}`,
         params: { keyword, pageNumber },
       }),
       keepUnusedDataFor: 5,
     }),
     getProductDetails: builder.query({
       query: (productId) => ({
-        url: `${https://mern-dopewatch-app.onrender.com}/${productId}`,
+        url: `${https://mern-dopewatch-app.onrender.com/api/products}/${productId}`,
       }),
       keepUnusedDataFor: 5,
     }),
     createProduct: builder.mutation({
       query: () => ({
-        url: `${https://mern-dopewatch-app.onrender.com}`,
+        url: `${https://mern-dopewatch-app.onrender.com/api/products}`,
         method: 'POST',
       }),
       invalidatesTags: ['Product'],
     }),
     updateProduct: builder.mutation({
       query: (data) => ({
-        url: `${https://mern-dopewatch-app.onrender.com}/${data.productId}`,
+        url: `${https://mern-dopewatch-app.onrender.com/api/products}/${data.productId}`,
         method: 'PUT',
         body: data,
       }),
@@ -40,21 +40,21 @@ export const productSlice = apiSlice.injectEndpoints({
     }),
     deleteProduct: builder.mutation({
       query: (productId) => ({
-        url: `${https://mern-dopewatch-app.onrender.com}/${productId}`,
+        url: `${https://mern-dopewatch-app.onrender.com/api/products}/${productId}`,
         method: 'DELETE',
       }),
       providesTags: ['Product'],
     }),
     createReview: builder.mutation({
       query: (data) => ({
-        url: `${https://mern-dopewatch-app.onrender.com}/${data.productId}/reviews`,
+        url: `${https://mern-dopewatch-app.onrender.com/api/products}/${data.productId}/reviews`,
         method: 'POST',
         body: data,
       }),
       invalidatesTags: ['Product'],
     }),
     getTopProducts: builder.query({
-      query: () => `${https://mern-dopewatch-app.onrender.com}/top`,
+      query: () => `${https://mern-dopewatch-app.onrender.com/api/products}/top`,
       keepUnusedDataFor: 5,
     }),
   }),
